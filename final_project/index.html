@@ -1,101 +1,109 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>循環式互動故事 - 食衣住行育樂</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循環式互動故事 - 食衣住行育樂</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1 id="main-title">海洋保護與循環生活</h1>
-    </header>
+    <header>
+        <h1 id="main-title">海洋保護與循環生活</h1>
+    </header>
 
-    <main id="app">
-        <section id="entry-view" class="view">
-            <div class="olympic-grid">
-                <div class="ring-row top">
-                    <button class="square-btn active" onclick="showSection('food-sub-view')">
-                        <span class="cn">食</span><span class="en">Food</span>
-                    </button>
-                    <button class="square-btn disabled">
-                        <span class="cn">衣</span><span class="en">Clothing</span>
-                    </button>
-                    <button class="square-btn disabled">
-                        <span class="cn">住</span><span class="en">Housing</span>
-                    </button>
-                </div>
-                <div class="ring-row bottom">
-                    <button class="square-btn disabled">
-                        <span class="cn">行</span><span class="en">Mobility</span>
-                    </button>
-                    <button class="square-btn disabled">
-                        <span class="cn">育樂</span><span class="en">Edu & Fun</span>
-                    </button>
-                </div>
-            </div>
-        </section>
+    <main id="app">
+        <section id="entry-view" class="view">
+            <div class="olympic-grid">
+                <div class="ring-row top">
+                    <button class="square-btn active" onclick="showSection('food-intro')">
+                        <span class="cn">食</span><span class="en">Food</span>
+                    </button>
+                    <button class="square-btn disabled">
+                        <span class="cn">衣</span><span class="en">Clothing</span>
+                    </button>
+                    <button class="square-btn disabled">
+                        <span class="cn">住</span><span class="en">Housing</span>
+                    </button>
+                </div>
+                <div class="ring-row bottom">
+                    <button class="square-btn disabled">
+                        <span class="cn">行</span><span class="en">Mobility</span>
+                    </button>
+                    <button class="square-btn disabled">
+                        <span class="cn">育樂</span><span class="en">Edu & Fun</span>
+                    </button>
+                </div>
+            </div>
+        </section>
 
-        <section id="food-sub-view" class="view hidden">
-            <h2>選擇您想了解的產品</h2>
-            <div class="product-grid">
-                <button class="product-card" onclick="showSection('land-pollution')">
-                    <img src="https://via.placeholder.com/150?text=Tableware" alt="免洗餐具">
-                    <p>免洗餐具 / Disposable Tableware</p>
-                </button>
-                <button class="product-card disabled">
-                    <img src="https://via.placeholder.com/150?text=Beverage" alt="瓶裝飲料">
-                    <p>瓶裝飲料 (開發中)</p>
-                </button>
-            </div>
-            <button class="back-btn" onclick="showSection('entry-view')">← 返回首頁</button>
-        </section>
+        <section id="food-intro" class="view hidden slide-view">
+            <div class="slide-content">
+                <div class="text-side">
+                    <h3>餐飲中的塑膠蹤跡</h3>
+                    <p>在我們的日常飲食中，免洗餐具與塑膠瓶罐是最貼近生活的污染源。</p>
+                    <div class="img-group">
+                        <figure>
+                            <img src="https://live.staticflickr.com/65535/52672212201_724a87ce20_b.jpg" alt="免洗餐具">
+                            <figcaption>免洗餐具 </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="https://cc.tvbs.com.tw/img/program/_data/i/upload/2022/11/28/20221128153425-43246a3d-la.jpg" alt="塑膠飲料罐">
+                            <figcaption>塑膠飲料罐 </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="next-area" onclick="showSection('land-pollution')">NEXT →</div>
+        </section>
 
-        <section id="land-pollution" class="view hidden slide-view">
-            <div class="slide-content">
-                <div class="text-side">
-                    <h3>陸地上的足跡</h3>
-                    <p>研究顯示，大約 70–80% 的海洋塑膠其實來自陸地。</p>
-                    <p>全球產生的塑膠垃圾中，竟有 79% 最終進入了垃圾掩埋場或自然環境中。</p>
-                </div>
-                <div class="img-side">
-                    <img src="https://via.placeholder.com/500x300?text=Landfill+Photo" alt="陸地污染">
-                </div>
-            </div>
-            <div class="next-area" onclick="showSection('ocean-pollution')">NEXT →</div>
-        </section>
+        <section id="land-pollution" class="view hidden slide-view">
+            <div class="slide-content">
+                <div class="text-side">
+                    <h3>陸地上的足跡</h3>
+                    <p>約 70–80% 的海洋塑膠來自陸地。高達 79% 的塑膠廢棄物最終進入掩埋場。</p>
+                    <div class="img-group">
+                        <img src="https://images.unsplash.com/photo-1721622248593-c24c83b830c7?q=80&w=2071&auto=format&fit=crop" alt="陸地篇1">
+                        <img src="https://images.pexels.com/photos/3174350/pexels-photo-3174350.jpeg" alt="陸地篇2">
+                    </div>
+                </div>
+            </div>
+            <div class="next-area" onclick="showSection('ocean-pollution')">NEXT →</div>
+        </section>
 
-        <section id="ocean-pollution" class="view hidden slide-view">
-            <div class="slide-content">
-                <div class="text-side">
-                    <h3>海洋的吶喊</h3>
-                    <p>每年估計有高達 1,100 萬至 1,400 萬公噸的塑膠流入海洋。</p>
-                    <p>這相當於每一分鐘，就有一輛滿載塑膠的垃圾車向大海傾倒。</p>
-                </div>
-                <div class="img-side">
-                    <img src="https://via.placeholder.com/500x300?text=Ocean+Plastic+Photo" alt="海洋污染">
-                </div>
-            </div>
-            <div class="next-area" onclick="showSection('improvement-view')">NEXT →</div>
-        </section>
+        <section id="ocean-pollution" class="view hidden slide-view">
+            <div class="slide-content">
+                <div class="text-side">
+                    <h3>海洋的吶喊</h3>
+                    <p>每年有超過 1,100 萬公噸塑膠流入海洋，每分鐘就有一輛垃圾車的量傾倒進大海。</p>
+                    <div class="img-group">
+                        <img src="https://images.unsplash.com/photo-1621451651659-ac1c3100a9b7?q=80&w=735&auto=format&fit=crop" alt="海洋篇1">
+                        <img src="https://images.unsplash.com/photo-1725833971833-74b215093800?q=80&w=1974&auto=format&fit=crop" alt="海洋篇2">
+                    </div>
+                </div>
+            </div>
+            <div class="next-area" onclick="showSection('improvement-view')">NEXT →</div>
+        </section>
 
-        <section id="improvement-view" class="view hidden">
-            <div class="sticky-note-container">
-                <div class="sticky-note">
-                    <h4>🌱 小小的改變</h4>
-                    <ul>
-                        <li>使用環保餐具，每學年可減少約 30 公斤垃圾。</li>
-                        <li>不鏽鋼餐盒使用 24 次，能源消耗即低於一次性紙餐盒。</li>
-                        <li>自備餐具，讓海洋少一點負擔。</li>
-                    </ul>
-                    <button class="restart-btn" onclick="showSection('entry-view')">再次啟程</button>
-                </div>
-            </div>
-        </section>
-    </main>
+        <section id="improvement-view" class="view hidden">
+            <div class="sticky-note-container">
+                <div class="sticky-note">
+                    <h4>🌱 替代方案建議</h4>
+                    <div class="img-group mini">
+                        <img src="https://i4.momoshop.com.tw/1695363034/goodsimg/0008/212/923/8212923_R_m.webp" alt="不鏽鋼餐具">
+                        <img src="https://liferich.co/cdn/shop/files/doublebox-sku-bentobox-xsm-blue.jpg?v=1764662687&width=1000" alt="不鏽鋼便當盒">
+                    </div>
+                    <ul>
+                        <li>使用不鏽鋼餐具 。</li>
+                        <li>自備不鏽鋼便當盒 。</li>
+                        <li>每學年可為地球減少約 30 公斤垃圾。</li>
+                    </ul>
+                    <button class="restart-btn" onclick="showSection('entry-view')">再次啟程</button>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-逐條講解。
