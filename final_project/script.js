@@ -1,12 +1,14 @@
 function showSection(sectionId) {
+    // 1. 隱藏所有區塊
     const views = document.querySelectorAll('.view');
-    views.forEach(view => view.classList.add('hidden'));
+    views.forEach(v => v.classList.add('hidden'));
 
-    const targetSection = document.getElementById(sectionId);
-    if (targetSection) targetSection.classList.remove('hidden');
+    // 2. 顯示目標區塊
+    const target = document.getElementById(sectionId);
+    if (target) target.classList.remove('hidden');
 
+    // 3. 更新頁面標題
     const title = document.getElementById('main-title');
-    // 更新標題邏輯
     const titleMap = {
         'entry-view': "海洋保護與循環生活",
         'food-intro': "飲食現況：便利背後的代價",
@@ -14,8 +16,8 @@ function showSection(sectionId) {
         'ocean-pollution': "海洋篇：無聲的威脅",
         'improvement-view': "行動篇：我們可以做的改變"
     };
+    if (titleMap[sectionId]) title.innerText = titleMap[sectionId];
     
-    if (titleMap[sectionId]) {
-        title.innerText = titleMap[sectionId];
-    }
+    // 每次切換回到頁面頂端
+    window.scrollTo(0, 0);
 }
