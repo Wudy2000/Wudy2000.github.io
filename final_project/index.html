@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循環式互動故事 - 食衣住行育樂</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header>
+        <h1 id="main-title">海洋保護與循環生活</h1>
+    </header>
+
+    <main id="app">
+        <section id="entry-view" class="view">
+            <div class="olympic-grid">
+                <div class="ring-row top">
+                    <button class="square-btn active" onclick="showSection('food-sub-view')">
+                        <span class="cn">食</span><span class="en">Food</span>
+                    </button>
+                    <button class="square-btn disabled">
+                        <span class="cn">衣</span><span class="en">Clothing</span>
+                    </button>
+                    <button class="square-btn disabled">
+                        <span class="cn">住</span><span class="en">Housing</span>
+                    </button>
+                </div>
+                <div class="ring-row bottom">
+                    <button class="square-btn disabled">
+                        <span class="cn">行</span><span class="en">Mobility</span>
+                    </button>
+                    <button class="square-btn disabled">
+                        <span class="cn">育樂</span><span class="en">Edu & Fun</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="food-sub-view" class="view hidden">
+            <h2>選擇您想了解的產品</h2>
+            <div class="product-grid">
+                <button class="product-card" onclick="showSection('land-pollution')">
+                    <img src="https://via.placeholder.com/150?text=Tableware" alt="免洗餐具">
+                    <p>免洗餐具 / Disposable Tableware</p>
+                </button>
+                <button class="product-card disabled">
+                    <img src="https://via.placeholder.com/150?text=Beverage" alt="瓶裝飲料">
+                    <p>瓶裝飲料 (開發中)</p>
+                </button>
+            </div>
+            <button class="back-btn" onclick="showSection('entry-view')">← 返回首頁</button>
+        </section>
+
+        <section id="land-pollution" class="view hidden slide-view">
+            <div class="slide-content">
+                <div class="text-side">
+                    <h3>陸地上的足跡</h3>
+                    <p>研究顯示，大約 70–80% 的海洋塑膠其實來自陸地。</p>
+                    <p>全球產生的塑膠垃圾中，竟有 79% 最終進入了垃圾掩埋場或自然環境中。</p>
+                </div>
+                <div class="img-side">
+                    <img src="https://via.placeholder.com/500x300?text=Landfill+Photo" alt="陸地污染">
+                </div>
+            </div>
+            <div class="next-area" onclick="showSection('ocean-pollution')">NEXT →</div>
+        </section>
+
+        <section id="ocean-pollution" class="view hidden slide-view">
+            <div class="slide-content">
+                <div class="text-side">
+                    <h3>海洋的吶喊</h3>
+                    <p>每年估計有高達 1,100 萬至 1,400 萬公噸的塑膠流入海洋。</p>
+                    <p>這相當於每一分鐘，就有一輛滿載塑膠的垃圾車向大海傾倒。</p>
+                </div>
+                <div class="img-side">
+                    <img src="https://via.placeholder.com/500x300?text=Ocean+Plastic+Photo" alt="海洋污染">
+                </div>
+            </div>
+            <div class="next-area" onclick="showSection('improvement-view')">NEXT →</div>
+        </section>
+
+        <section id="improvement-view" class="view hidden">
+            <div class="sticky-note-container">
+                <div class="sticky-note">
+                    <h4>🌱 小小的改變</h4>
+                    <ul>
+                        <li>使用環保餐具，每學年可減少約 30 公斤垃圾。</li>
+                        <li>不鏽鋼餐盒使用 24 次，能源消耗即低於一次性紙餐盒。</li>
+                        <li>自備餐具，讓海洋少一點負擔。</li>
+                    </ul>
+                    <button class="restart-btn" onclick="showSection('entry-view')">再次啟程</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+逐條講解。
