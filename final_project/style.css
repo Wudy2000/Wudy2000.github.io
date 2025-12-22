@@ -1,78 +1,45 @@
-:root {
-    --primary-color: #2c3e50;
-    --bg-color: #f4f7f6;
-    --note-yellow: #fff382;
+/* 隱藏邏輯：必須放在最上面 */
+.hidden {
+    display: none !important;
 }
 
 body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    background-color: var(--bg-color);
-}
-
-/* 核心隱藏功能 */
-.hidden { display: none !important; }
-
-header {
     text-align: center;
-    padding: 20px;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #f4f7f6;
 }
 
 .view {
+    padding: 50px 20px;
     min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
 }
 
-/* 奧運五環按鈕排列 */
-.olympic-grid { display: flex; flex-direction: column; gap: 15px; }
-.ring-row { display: flex; justify-content: center; gap: 15px; }
-.ring-row.bottom { margin-top: -20px; }
-
+/* 奧運五環按鈕樣式 */
+.olympic-grid { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.ring-row { display: flex; gap: 10px; }
 .square-btn {
-    width: 100px; height: 100px;
-    border: 3px solid var(--primary-color);
-    background: white;
+    width: 80px; height: 80px;
+    background: white; border: 2px solid #2c3e50;
     cursor: pointer;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
-.square-btn.disabled { opacity: 0.3; cursor: not-allowed; }
+.square-btn.disabled { opacity: 0.3; }
 
-/* 圖片排版優化 */
-.img-group {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+/* 圖片樣式 */
 .img-group img {
-    width: 300px; /* 固定寬度讓排版整齊 */
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
+    width: 40%; max-width: 300px;
+    margin: 10px; border-radius: 8px;
 }
-.img-group.mini img { width: 80px; height: 80px; }
 
-.slide-view { position: relative; width: 100%; max-width: 1000px; margin: 0 auto; }
+/* 下一頁按鈕 */
 .next-area {
-    position: fixed;
-    right: 30px; top: 50%;
-    background: rgba(0,0,0,0.8);
-    color: white; padding: 15px;
-    cursor: pointer; border-radius: 50px;
+    margin-top: 20px; background: #333; color: white;
+    padding: 10px 20px; cursor: pointer; display: inline-block;
 }
 
 /* 便利貼 */
 .sticky-note {
-    background: var(--note-yellow);
-    padding: 30px;
-    width: 320px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-    transform: rotate(1deg);
+    background: #fff382; padding: 20px;
+    width: 250px; margin: 0 auto;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
 }
