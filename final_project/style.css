@@ -1,27 +1,78 @@
-/* 新增：圖片群組排版 */
+:root {
+    --primary-color: #2c3e50;
+    --bg-color: #f4f7f6;
+    --note-yellow: #fff382;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+}
+
+/* 核心隱藏功能 */
+.hidden { display: none !important; }
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.view {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* 奧運五環按鈕排列 */
+.olympic-grid { display: flex; flex-direction: column; gap: 15px; }
+.ring-row { display: flex; justify-content: center; gap: 15px; }
+.ring-row.bottom { margin-top: -20px; }
+
+.square-btn {
+    width: 100px; height: 100px;
+    border: 3px solid var(--primary-color);
+    background: white;
+    cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+.square-btn.disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* 圖片排版優化 */
 .img-group {
     display: flex;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 15px;
     justify-content: center;
+    flex-wrap: wrap;
 }
-
 .img-group img {
-    width: 45%; /* 兩張並排時的寬度 */
-    max-height: 300px;
+    width: 300px; /* 固定寬度讓排版整齊 */
+    height: 200px;
     object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+.img-group.mini img { width: 80px; height: 80px; }
+
+.slide-view { position: relative; width: 100%; max-width: 1000px; margin: 0 auto; }
+.next-area {
+    position: fixed;
+    right: 30px; top: 50%;
+    background: rgba(0,0,0,0.8);
+    color: white; padding: 15px;
+    cursor: pointer; border-radius: 50px;
 }
 
-.img-group.mini img {
-    width: 80px; /* 便利貼內的小圖寬度 */
-    height: 80px;
-}
-
-figcaption {
-    font-size: 0.8rem;
-    color: #666;
-    margin-top: 5px;
-    text-align: center;
+/* 便利貼 */
+.sticky-note {
+    background: var(--note-yellow);
+    padding: 30px;
+    width: 320px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    transform: rotate(1deg);
 }
