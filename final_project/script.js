@@ -10,7 +10,7 @@ function showSection(sectionId) {
     // 3. 更新頁面標題
     const title = document.getElementById('main-title');
     const titleMap = {
-        'entry-view': "海洋保護與循環生活",
+        'entry-view': "產品的旅程：從消費到循環",
         'food-intro': "飲食現況：便利背後的代價",
         'land-pollution': "陸地篇：垃圾的終點",
         'ocean-pollution': "海洋篇：無聲的威脅",
